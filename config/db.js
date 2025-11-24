@@ -2,7 +2,7 @@ const db = require("../models")
 
 async function  connectDatabase(){
     try{
-        await db.sequelize.authencticate();
+        await db.sequelize.authenticate();
         console.log("Database berhasil terhubung");
 
         await db.sequelize.sync({ alter: true});
