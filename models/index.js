@@ -1,13 +1,12 @@
+'use strict';
 
-// FILE: models/index.js
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-// Arahkan ke config.js kamu
-const config = require(__dirname + '/../config/config.js')[env]; 
+const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
@@ -17,7 +16,6 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-// Membaca semua file model (seperti komik.js)
 fs
   .readdirSync(__dirname)
   .filter(file => {
